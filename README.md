@@ -11,7 +11,9 @@
 - 插件、插件市场、MCP、Skills、Tools、Commands
 - 知识库、人格、会话规则、对话记录、Cron、Sub-agent、T2I
 - 备份、API Key、更新、存储、日志、Trace 和系统配置
-- 内置 OpenAPI 浏览器，动态读取服务器 schema，覆盖 WebUI 暴露的全部 API（当前 AstrBot 4.27.3 共 224 条路径）
+- 原生实时控制台：先载入历史日志，再通过 SSE 持续接收日志，支持等级筛选、搜索、自动滚动和断线重连
+- 设置结构和保存逻辑与 WebUI 对齐，覆盖常规、外观、网络、安全、维护、OpenAPI 与资源
+- OpenAPI 浏览器保留在设置中的高级工具入口，不作为主要管理界面
 - iOS 26 `glassEffect`，并为较低系统提供 Material 降级
 - 深色/浅色模式、Dynamic Type、VoiceOver 标签、减少动态效果和 iPad 布局
 
@@ -49,6 +51,6 @@ git push origin v1.0.0
 - 局域网 HTTP 可连接；`Info.plist` 只开放了 Local Networking，没有全局关闭 ATS。
 - 若使用公网域名，证书必须受 iOS 信任。
 
-## 完整管理策略
+## 管理界面策略
 
-高频模块提供原生快捷页面；服务器 OpenAPI 中的每个操作同时出现在“接口”标签页，可填写路径参数、Query 和 JSON Body 后直接执行。因此 AstrBot 后续新增 API 时，不必等待 App 更新也能立即管理。
+底部导航按“概览、聊天、管理、日志、设置”组织。常用管理功能使用原生卡片、列表、状态、开关和表单呈现；OpenAPI 仅作为服务器新增能力尚未适配时的高级备用工具。
