@@ -77,7 +77,8 @@ jobs:
             build 2>&1 | tee simulator-build.log || {
               status=${PIPESTATUS[0]}
               echo "::group::Swift compiler diagnostics"
-              grep -n -C 4 -E '(^|[^[:alpha:]])(error:|fatal error:)' simulator-build.log || true
+              grep -n -C 4 -E '(^|[^[:alpha:]])(error:|fatal error:)' simulator-build.log \
+                | while IFS= read -r line; do echo "::error file=SwiftCompiler::${line//$'\e'/}"; done || true
               echo "::endgroup::"
               exit "$status"
             }
