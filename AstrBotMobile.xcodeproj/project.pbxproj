@@ -1,0 +1,212 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9892741BAD2D0A9634B6080C /* AppState.swift in Build */ = {isa = PBXBuildFile; fileRef = 137B968A691C3F9118B93485 /* AppState.swift */; };
+		D9A5332F1D4232681D6E58DA /* AstrBotMobileApp.swift in Build */ = {isa = PBXBuildFile; fileRef = 44E0BCE64D584D2082366EC8 /* AstrBotMobileApp.swift */; };
+		14EF2803C9D685813B7E086A /* RootView.swift in Build */ = {isa = PBXBuildFile; fileRef = 10B8F1CFBE03CEA44053606E /* RootView.swift */; };
+		EF5735829A7441B32917C8D7 /* JSONValue.swift in Build */ = {isa = PBXBuildFile; fileRef = BD10F0E9E0A871F5DDA7C1D9 /* JSONValue.swift */; };
+		53E57EF4B3CEE770A29676C3 /* KeychainStore.swift in Build */ = {isa = PBXBuildFile; fileRef = 57554BA81BA857502BB9E07E /* KeychainStore.swift */; };
+		12B88C1BE843F82C7B927D42 /* URL+AstrBot.swift in Build */ = {isa = PBXBuildFile; fileRef = 80AB09CBD70A97F7B37F01D5 /* URL+AstrBot.swift */; };
+		CE10BB149885120F7CC71415 /* AstrBotLogo.swift in Build */ = {isa = PBXBuildFile; fileRef = 48555CB8A104ECB0827648B4 /* AstrBotLogo.swift */; };
+		3094AF9BDDFA471F365552C2 /* LiquidGlass.swift in Build */ = {isa = PBXBuildFile; fileRef = 2B1BD26FE69EC1B7995163CE /* LiquidGlass.swift */; };
+		CC14D239B63CFE224B67850D /* LoginView.swift in Build */ = {isa = PBXBuildFile; fileRef = 511C313C37E88E5053EAA842 /* LoginView.swift */; };
+		186DBA3F80B77584DC893F22 /* ChatView.swift in Build */ = {isa = PBXBuildFile; fileRef = 8976718FC6AFBE4D1EE34250 /* ChatView.swift */; };
+		E64BFEB03AF1F4F042553959 /* DashboardView.swift in Build */ = {isa = PBXBuildFile; fileRef = 88767E660439A151AD9F95CC /* DashboardView.swift */; };
+		77C0CFB9AF08C771F26CE894 /* MainTabView.swift in Build */ = {isa = PBXBuildFile; fileRef = 9A92D80854BFB6BD3F325A8F /* MainTabView.swift */; };
+		77722DA78A2FC102B76A57D9 /* APIExplorerView.swift in Build */ = {isa = PBXBuildFile; fileRef = EF5AF861085751FE79EA9388 /* APIExplorerView.swift */; };
+		80BBC6E4443B2B85A27C1C3A /* ManagementHubView.swift in Build */ = {isa = PBXBuildFile; fileRef = 3CD402D9AF8466FA74641AF7 /* ManagementHubView.swift */; };
+		7767B5A2AC6666AE8D623932 /* ResourceDetailView.swift in Build */ = {isa = PBXBuildFile; fileRef = F0D70E88E5E7ED77F0FBA8CA /* ResourceDetailView.swift */; };
+		E24416DCFF6C84DAE45F7CAA /* ResourceListView.swift in Build */ = {isa = PBXBuildFile; fileRef = ACC264DBAC927D401AB6C038 /* ResourceListView.swift */; };
+		A3C23AF278269A1430AB6333 /* SettingsView.swift in Build */ = {isa = PBXBuildFile; fileRef = E5665FDA4B3D29A492017090 /* SettingsView.swift */; };
+		B71D1003F4EBCDA10A7A2487 /* ChatModels.swift in Build */ = {isa = PBXBuildFile; fileRef = E328FE5D84FA939AE1A35568 /* ChatModels.swift */; };
+		6E1107809A0E719BF81D6417 /* ManagementResource.swift in Build */ = {isa = PBXBuildFile; fileRef = E238E76416C9CE9D97886BE7 /* ManagementResource.swift */; };
+		DA10A1DCD7E1E625AA245F2B /* OpenAPIDocument.swift in Build */ = {isa = PBXBuildFile; fileRef = F72BB614D74B7BF778955E71 /* OpenAPIDocument.swift */; };
+		20635BC606824E2894BE8E72 /* AstrBotAPIClient.swift in Build */ = {isa = PBXBuildFile; fileRef = 1C8CF4C54630146042D8B1D6 /* AstrBotAPIClient.swift */; };
+		997922143F63ACDEADF20603 /* OpenAPIService.swift in Build */ = {isa = PBXBuildFile; fileRef = B1AD7609563D61A24CACC2E0 /* OpenAPIService.swift */; };
+		6AC9E0C53561C81DF8278932 /* Assets.xcassets in Build */ = {isa = PBXBuildFile; fileRef = 7912466D849870D3290230E5 /* Assets.xcassets */; };
+		735493078C8AF219220F7108 /* astrbot-openapi.json in Build */ = {isa = PBXBuildFile; fileRef = 3FB14A1334B7AA6EBA5CD2A5 /* astrbot-openapi.json */; };
+		76B853E40EAD5F7F53E57EC0 /* AstrBotMobileTests.swift in Build */ = {isa = PBXBuildFile; fileRef = 393A45BE50C6624031277889 /* AstrBotMobileTests.swift */; };
+		6625E472223FFFEC8F98C55E /* AstrBotMobileUITests.swift in Build */ = {isa = PBXBuildFile; fileRef = 91E91E466736A37E63C3F533 /* AstrBotMobileUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		441F2E0829D2AEEB9FF45D40 = {isa = PBXContainerItemProxy; containerPortal = 98F54143AB4E86B28C3AFEE0; proxyType = 1; remoteGlobalIDString = CCD1BDFE40AA20836710EC01; remoteInfo = AstrBotMobile; };
+		83A8297435215A3C81E6A85B = {isa = PBXContainerItemProxy; containerPortal = 98F54143AB4E86B28C3AFEE0; proxyType = 1; remoteGlobalIDString = CCD1BDFE40AA20836710EC01; remoteInfo = AstrBotMobile; };
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5718BA8B2965F0F686C8E55B /* AstrBotMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AstrBotMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EF5F27FC2840F4EF5595DEE /* AstrBotMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstrBotMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB8E5785B8C685CAD3A0B70 /* AstrBotMobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AstrBotMobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		137B968A691C3F9118B93485 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/App/AppState.swift"; sourceTree = SOURCE_ROOT; };
+		44E0BCE64D584D2082366EC8 /* AstrBotMobileApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/App/AstrBotMobileApp.swift"; sourceTree = SOURCE_ROOT; };
+		10B8F1CFBE03CEA44053606E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/App/RootView.swift"; sourceTree = SOURCE_ROOT; };
+		BD10F0E9E0A871F5DDA7C1D9 /* JSONValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Core/JSONValue.swift"; sourceTree = SOURCE_ROOT; };
+		57554BA81BA857502BB9E07E /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Core/KeychainStore.swift"; sourceTree = SOURCE_ROOT; };
+		80AB09CBD70A97F7B37F01D5 /* URL+AstrBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Core/URL+AstrBot.swift"; sourceTree = SOURCE_ROOT; };
+		48555CB8A104ECB0827648B4 /* AstrBotLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/DesignSystem/AstrBotLogo.swift"; sourceTree = SOURCE_ROOT; };
+		2B1BD26FE69EC1B7995163CE /* LiquidGlass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/DesignSystem/LiquidGlass.swift"; sourceTree = SOURCE_ROOT; };
+		511C313C37E88E5053EAA842 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Authentication/LoginView.swift"; sourceTree = SOURCE_ROOT; };
+		8976718FC6AFBE4D1EE34250 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Chat/ChatView.swift"; sourceTree = SOURCE_ROOT; };
+		88767E660439A151AD9F95CC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Dashboard/DashboardView.swift"; sourceTree = SOURCE_ROOT; };
+		9A92D80854BFB6BD3F325A8F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Dashboard/MainTabView.swift"; sourceTree = SOURCE_ROOT; };
+		EF5AF861085751FE79EA9388 /* APIExplorerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Management/APIExplorerView.swift"; sourceTree = SOURCE_ROOT; };
+		3CD402D9AF8466FA74641AF7 /* ManagementHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Management/ManagementHubView.swift"; sourceTree = SOURCE_ROOT; };
+		F0D70E88E5E7ED77F0FBA8CA /* ResourceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Management/ResourceDetailView.swift"; sourceTree = SOURCE_ROOT; };
+		ACC264DBAC927D401AB6C038 /* ResourceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Management/ResourceListView.swift"; sourceTree = SOURCE_ROOT; };
+		E5665FDA4B3D29A492017090 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Settings/SettingsView.swift"; sourceTree = SOURCE_ROOT; };
+		E328FE5D84FA939AE1A35568 /* ChatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Models/ChatModels.swift"; sourceTree = SOURCE_ROOT; };
+		E238E76416C9CE9D97886BE7 /* ManagementResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Models/ManagementResource.swift"; sourceTree = SOURCE_ROOT; };
+		F72BB614D74B7BF778955E71 /* OpenAPIDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Models/OpenAPIDocument.swift"; sourceTree = SOURCE_ROOT; };
+		1C8CF4C54630146042D8B1D6 /* AstrBotAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Services/AstrBotAPIClient.swift"; sourceTree = SOURCE_ROOT; };
+		B1AD7609563D61A24CACC2E0 /* OpenAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Services/OpenAPIService.swift"; sourceTree = SOURCE_ROOT; };
+		7912466D849870D3290230E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "AstrBotMobile/Resources/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+		3FB14A1334B7AA6EBA5CD2A5 /* astrbot-openapi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "AstrBotMobile/Resources/astrbot-openapi.json"; sourceTree = SOURCE_ROOT; };
+		393A45BE50C6624031277889 /* AstrBotMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobileTests/AstrBotMobileTests.swift"; sourceTree = SOURCE_ROOT; };
+		91E91E466736A37E63C3F533 /* AstrBotMobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobileUITests/AstrBotMobileUITests.swift"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8226845DD06A9803C9F1E0E1 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		7B2CD6106D2201C026F030C2 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+		3C0766BFF9D05E171232E496 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6CFC827E67DCAE34C72B9CED = {isa = PBXGroup; children = (1DF401F405384E02A0BF02D3, 12E9DF2F0820E9F612A165AB, AD5DCE771682A966C8E74829, 021F2B7F3E0C61452C987484); sourceTree = "<group>"; };
+		1DF401F405384E02A0BF02D3 /* AstrBotMobile */ = {isa = PBXGroup; children = (137B968A691C3F9118B93485, 44E0BCE64D584D2082366EC8, 10B8F1CFBE03CEA44053606E, BD10F0E9E0A871F5DDA7C1D9, 57554BA81BA857502BB9E07E, 80AB09CBD70A97F7B37F01D5, 48555CB8A104ECB0827648B4, 2B1BD26FE69EC1B7995163CE, 511C313C37E88E5053EAA842, 8976718FC6AFBE4D1EE34250, 88767E660439A151AD9F95CC, 9A92D80854BFB6BD3F325A8F, EF5AF861085751FE79EA9388, 3CD402D9AF8466FA74641AF7, F0D70E88E5E7ED77F0FBA8CA, ACC264DBAC927D401AB6C038, E5665FDA4B3D29A492017090, E328FE5D84FA939AE1A35568, E238E76416C9CE9D97886BE7, F72BB614D74B7BF778955E71, 1C8CF4C54630146042D8B1D6, B1AD7609563D61A24CACC2E0, 7912466D849870D3290230E5, 3FB14A1334B7AA6EBA5CD2A5); name = AstrBotMobile; sourceTree = "<group>"; };
+		12E9DF2F0820E9F612A165AB /* AstrBotMobileTests */ = {isa = PBXGroup; children = (393A45BE50C6624031277889); name = AstrBotMobileTests; sourceTree = "<group>"; };
+		AD5DCE771682A966C8E74829 /* AstrBotMobileUITests */ = {isa = PBXGroup; children = (91E91E466736A37E63C3F533); name = AstrBotMobileUITests; sourceTree = "<group>"; };
+		021F2B7F3E0C61452C987484 /* Products */ = {isa = PBXGroup; children = (5718BA8B2965F0F686C8E55B, 4EF5F27FC2840F4EF5595DEE, 8CB8E5785B8C685CAD3A0B70); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CCD1BDFE40AA20836710EC01 /* AstrBotMobile */ = {isa = PBXNativeTarget; buildConfigurationList = 6D8FB42965893BD12EA629B4; buildPhases = (DBF6CD71B0C4EC30100789D3, 8226845DD06A9803C9F1E0E1, 05E689F15507506FE0040640); buildRules = (); dependencies = (); name = AstrBotMobile; productName = AstrBotMobile; productReference = 5718BA8B2965F0F686C8E55B; productType = "com.apple.product-type.application"; };
+		5D9688571339E638D7EAD326 /* AstrBotMobileTests */ = {isa = PBXNativeTarget; buildConfigurationList = E3ABA344610D530E77AA32DF; buildPhases = (BE4BC27101E7F29EB444ED01, 7B2CD6106D2201C026F030C2, 9675AE965AB2731D6C0E64EA); buildRules = (); dependencies = (A316364E6883600EBD298BFB); name = AstrBotMobileTests; productName = AstrBotMobileTests; productReference = 4EF5F27FC2840F4EF5595DEE; productType = "com.apple.product-type.bundle.unit-test"; };
+		E9A978555E5DCEAD66883125 /* AstrBotMobileUITests */ = {isa = PBXNativeTarget; buildConfigurationList = 751C44465A35C542920B64F5; buildPhases = (1EA01EEA0D670E248A7A1A60, 3C0766BFF9D05E171232E496, DE33745345C37CA4AD19FB6F); buildRules = (); dependencies = (9923D57192D3347AD924AC23); name = AstrBotMobileUITests; productName = AstrBotMobileUITests; productReference = 8CB8E5785B8C685CAD3A0B70; productType = "com.apple.product-type.bundle.ui-testing"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98F54143AB4E86B28C3AFEE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = { BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 2600; LastUpgradeCheck = 2600; TargetAttributes = { CCD1BDFE40AA20836710EC01 = { CreatedOnToolsVersion = 26.0; }; 5D9688571339E638D7EAD326 = { CreatedOnToolsVersion = 26.0; TestTargetID = CCD1BDFE40AA20836710EC01; }; E9A978555E5DCEAD66883125 = { CreatedOnToolsVersion = 26.0; TestTargetID = CCD1BDFE40AA20836710EC01; }; }; };
+			buildConfigurationList = B21C1D195CCB6F2828E1C10C; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base, zh_Hans); mainGroup = 6CFC827E67DCAE34C72B9CED; productRefGroup = 021F2B7F3E0C61452C987484; projectDirPath = ""; projectRoot = ""; targets = (CCD1BDFE40AA20836710EC01, 5D9688571339E638D7EAD326, E9A978555E5DCEAD66883125);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05E689F15507506FE0040640 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (6AC9E0C53561C81DF8278932, 735493078C8AF219220F7108); runOnlyForDeploymentPostprocessing = 0; };
+		9675AE965AB2731D6C0E64EA = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (735493078C8AF219220F7108); runOnlyForDeploymentPostprocessing = 0; };
+		DE33745345C37CA4AD19FB6F = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DBF6CD71B0C4EC30100789D3 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (9892741BAD2D0A9634B6080C, D9A5332F1D4232681D6E58DA, 14EF2803C9D685813B7E086A, EF5735829A7441B32917C8D7, 53E57EF4B3CEE770A29676C3, 12B88C1BE843F82C7B927D42, CE10BB149885120F7CC71415, 3094AF9BDDFA471F365552C2, CC14D239B63CFE224B67850D, 186DBA3F80B77584DC893F22, E64BFEB03AF1F4F042553959, 77C0CFB9AF08C771F26CE894, 77722DA78A2FC102B76A57D9, 80BBC6E4443B2B85A27C1C3A, 7767B5A2AC6666AE8D623932, E24416DCFF6C84DAE45F7CAA, A3C23AF278269A1430AB6333, B71D1003F4EBCDA10A7A2487, 6E1107809A0E719BF81D6417, DA10A1DCD7E1E625AA245F2B, 20635BC606824E2894BE8E72, 997922143F63ACDEADF20603); runOnlyForDeploymentPostprocessing = 0; };
+		BE4BC27101E7F29EB444ED01 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (76B853E40EAD5F7F53E57EC0); runOnlyForDeploymentPostprocessing = 0; };
+		1EA01EEA0D670E248A7A1A60 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (6625E472223FFFEC8F98C55E); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A316364E6883600EBD298BFB = {isa = PBXTargetDependency; target = CCD1BDFE40AA20836710EC01; targetProxy = 441F2E0829D2AEEB9FF45D40; };
+		9923D57192D3347AD924AC23 = {isa = PBXTargetDependency; target = CCD1BDFE40AA20836710EC01; targetProxy = 83A8297435215A3C81E6A85B; };
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5E8ACABCCBE1DB5D311988C9 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {
+			CLANG_ENABLE_MODULES = YES;
+			SWIFT_VERSION = 6.0;
+			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			SDKROOT = iphoneos;
+			TARGETED_DEVICE_FAMILY = "1,2";
+			DEBUG_INFORMATION_FORMAT = dwarf;
+			ENABLE_TESTABILITY = YES;
+			SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+		}; name = Debug; };
+		F84FD35CA8548076F2B51EDF /* Release */ = {isa = XCBuildConfiguration; buildSettings = {
+			CLANG_ENABLE_MODULES = YES;
+			SWIFT_VERSION = 6.0;
+			IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+			SDKROOT = iphoneos;
+			TARGETED_DEVICE_FAMILY = "1,2";
+			DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+			SWIFT_COMPILATION_MODE = wholemodule;
+		}; name = Release; };
+		9303EFBCAFCD82C17933C9EB /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {
+			ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+			ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+			CODE_SIGN_STYLE = Automatic;
+			CURRENT_PROJECT_VERSION = 1;
+			GENERATE_INFOPLIST_FILE = NO;
+			INFOPLIST_FILE = AstrBotMobile/Resources/Info.plist;
+			MARKETING_VERSION = 1.0.0;
+			PRODUCT_BUNDLE_IDENTIFIER = de.ruawd.astrbot.mobile;
+			PRODUCT_NAME = "$(TARGET_NAME)";
+			SWIFT_EMIT_LOC_STRINGS = YES;
+			SWIFT_VERSION = 6.0;
+			TARGETED_DEVICE_FAMILY = "1,2";
+			SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+		}; name = Debug; };
+		0F8B4C7FB77C768D3A78A504 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {
+			ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+			ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+			CODE_SIGN_STYLE = Automatic;
+			CURRENT_PROJECT_VERSION = 1;
+			GENERATE_INFOPLIST_FILE = NO;
+			INFOPLIST_FILE = AstrBotMobile/Resources/Info.plist;
+			MARKETING_VERSION = 1.0.0;
+			PRODUCT_BUNDLE_IDENTIFIER = de.ruawd.astrbot.mobile;
+			PRODUCT_NAME = "$(TARGET_NAME)";
+			SWIFT_EMIT_LOC_STRINGS = YES;
+			SWIFT_VERSION = 6.0;
+			TARGETED_DEVICE_FAMILY = "1,2";
+		}; name = Release; };
+		09B6DCF0C6D0455590144B37 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {
+			BUNDLE_LOADER = "$(TEST_HOST)";
+			CODE_SIGN_STYLE = Automatic;
+			GENERATE_INFOPLIST_FILE = YES;
+			PRODUCT_BUNDLE_IDENTIFIER = de.ruawd.astrbot.mobile.tests;
+			PRODUCT_NAME = "$(TARGET_NAME)";
+			SWIFT_VERSION = 6.0;
+			TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AstrBotMobile.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AstrBotMobile";
+		}; name = Debug; };
+		3BBB579A9CE7EF759F02D037 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {
+			BUNDLE_LOADER = "$(TEST_HOST)";
+			CODE_SIGN_STYLE = Automatic;
+			GENERATE_INFOPLIST_FILE = YES;
+			PRODUCT_BUNDLE_IDENTIFIER = de.ruawd.astrbot.mobile.tests;
+			PRODUCT_NAME = "$(TARGET_NAME)";
+			SWIFT_VERSION = 6.0;
+			TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AstrBotMobile.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AstrBotMobile";
+		}; name = Release; };
+		1FDA972094A319820BFAFC0E /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {
+			CODE_SIGN_STYLE = Automatic;
+			GENERATE_INFOPLIST_FILE = YES;
+			PRODUCT_BUNDLE_IDENTIFIER = de.ruawd.astrbot.mobile.uitests;
+			PRODUCT_NAME = "$(TARGET_NAME)";
+			SWIFT_VERSION = 6.0;
+			TEST_TARGET_NAME = AstrBotMobile;
+		}; name = Debug; };
+		5E4DA57E4B19CE873F5FC3AC /* Release */ = {isa = XCBuildConfiguration; buildSettings = {
+			CODE_SIGN_STYLE = Automatic;
+			GENERATE_INFOPLIST_FILE = YES;
+			PRODUCT_BUNDLE_IDENTIFIER = de.ruawd.astrbot.mobile.uitests;
+			PRODUCT_NAME = "$(TARGET_NAME)";
+			SWIFT_VERSION = 6.0;
+			TEST_TARGET_NAME = AstrBotMobile;
+		}; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B21C1D195CCB6F2828E1C10C /* Build configuration list for PBXProject */ = {isa = XCConfigurationList; buildConfigurations = (5E8ACABCCBE1DB5D311988C9, F84FD35CA8548076F2B51EDF); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		6D8FB42965893BD12EA629B4 /* Build configuration list for AstrBotMobile */ = {isa = XCConfigurationList; buildConfigurations = (9303EFBCAFCD82C17933C9EB, 0F8B4C7FB77C768D3A78A504); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		E3ABA344610D530E77AA32DF /* Build configuration list for AstrBotMobileTests */ = {isa = XCConfigurationList; buildConfigurations = (09B6DCF0C6D0455590144B37, 3BBB579A9CE7EF759F02D037); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		751C44465A35C542920B64F5 /* Build configuration list for AstrBotMobileUITests */ = {isa = XCConfigurationList; buildConfigurations = (1FDA972094A319820BFAFC0E, 5E4DA57E4B19CE873F5FC3AC); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+}
