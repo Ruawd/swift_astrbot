@@ -28,6 +28,21 @@
 
 没有付费 Apple Developer 账号时，可以使用 Xcode 的 Personal Team 安装到自己的 iPhone。个人签名通常需要每 7 天重新签名。也可在 Mac 上 Archive 后交给 AltStore/SideStore 等自签工具。
 
+## GitHub Release IPA
+
+仓库包含 `.github/workflows/release-ipa.yml`：
+
+- 推送 `v*` Tag 会在 GitHub macOS Runner 上构建未签名 IPA，并自动创建 Release。
+- 也可以在 Actions 页面手动运行 `Build unsigned IPA release`。
+- Release 中的 `*-unsigned.ipa` 必须先由 AltStore、SideStore、TrollStore 或其他工具签名后才能安装。
+
+发布示例：
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
 ## 网络要求
 
 - 推荐 AstrBot 使用 HTTPS。

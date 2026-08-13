@@ -1,0 +1,121 @@
+name: Build unsigned IPA release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version, for example v1.0.0"
+        required: true
+        default: "v1.0.0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ipa-release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build iOS IPA
+    runs-on: macos-15
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Select Xcode 26 when available
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -d /Applications/Xcode_26.0.app ]; then
+            sudo xcode-select -s /Applications/Xcode_26.0.app/Contents/Developer
+          elif [ -d /Applications/Xcode_26.app ]; then
+            sudo xcode-select -s /Applications/Xcode_26.app/Contents/Developer
+          else
+            echo "Xcode 26 is not installed on this runner; using the newest installed Xcode."
+            latest="$(find /Applications -maxdepth 1 -type d -name 'Xcode*.app' -print | sort -V | tail -n 1)"
+            test -n "$latest"
+            sudo xcode-select -s "$latest/Contents/Developer"
+          fi
+          xcodebuild -version
+          swift --version
+
+      - name: Resolve release version
+        id: version
+        shell: bash
+        env:
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          set -euo pipefail
+          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
+            version="${GITHUB_REF_NAME}"
+          else
+            version="${INPUT_VERSION:-v1.0.0}"
+          fi
+          [[ "$version" == v* ]] || version="v$version"
+          echo "tag=$version" >> "$GITHUB_OUTPUT"
+          echo "short=${version#v}" >> "$GITHUB_OUTPUT"
+
+      - name: Build app without signing
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf build Payload
+          xcodebuild \
+            -project AstrBotMobile.xcodeproj \
+            -scheme AstrBotMobile \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build/DerivedData \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY='' \
+            MARKETING_VERSION='${{ steps.version.outputs.short }}' \
+            clean build
+
+      - name: Package unsigned IPA
+        shell: bash
+        run: |
+          set -euo pipefail
+          app="build/DerivedData/Build/Products/Release-iphoneos/AstrBotMobile.app"
+          test -d "$app"
+          mkdir -p Payload
+          cp -R "$app" Payload/
+          ditto -c -k --sequesterRsrc --keepParent Payload "AstrBotMobile-${{ steps.version.outputs.tag }}-unsigned.ipa"
+          shasum -a 256 "AstrBotMobile-${{ steps.version.outputs.tag }}-unsigned.ipa" > SHA256SUMS.txt
+          plutil -p "$app/Info.plist"
+          unzip -t "AstrBotMobile-${{ steps.version.outputs.tag }}-unsigned.ipa"
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: AstrBotMobile-${{ steps.version.outputs.tag }}-unsigned
+          path: |
+            AstrBotMobile-${{ steps.version.outputs.tag }}-unsigned.ipa
+            SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: AstrBot Mobile ${{ steps.version.outputs.tag }}
+          generate_release_notes: true
+          prerelease: ${{ contains(steps.version.outputs.tag, '-') }}
+          body: |
+            原生 SwiftUI AstrBot 管理端。
+
+            - iOS 26 Liquid Glass；旧版本自动使用 Material 降级
+            - 当前附件是未签名 IPA，需要使用 AltStore、SideStore、TrollStore 或其他自签工具签名安装
+            - 账号 Token 仅保存在设备 Keychain
+          files: |
+            AstrBotMobile-${{ steps.version.outputs.tag }}-unsigned.ipa
+            SHA256SUMS.txt
+          fail_on_unmatched_files: true
