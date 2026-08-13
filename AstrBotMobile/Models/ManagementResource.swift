@@ -80,17 +80,17 @@ struct ManagementResource: Identifiable, Hashable {
             let object = raw.objectValue ?? [:]
             let identifier = Self.firstString(object, keys: [
                 "id", "plugin_id", "provider_id", "bot_id", "session_id", "job_id", "kb_id",
-                "name", "key_id", "umo", "filename", "handler_full_name",
+                "persona_id", "name", "key_id", "umo", "filename", "handler_full_name",
             ]) ?? "\(index)"
             let title = Self.firstString(object, keys: [
                 "name", "display_name", "title", "plugin_name", "provider_id", "bot_id",
-                "session_id", "job_id", "kb_name", "filename", "umo", "handler_name", "key_id",
+                "persona_id", "session_id", "job_id", "kb_name", "filename", "umo", "handler_name", "key_id",
             ]) ?? identifier
             let subtitle = Self.firstString(object, keys: [
                 "description", "desc", "type", "version", "provider_type", "platform_id",
                 "cron_expression", "schedule", "source", "updated_at", "created_at", "status",
             ])
-            let enabled = object["enabled"]?.stringValue ?? object["enable"]?.stringValue ?? object["is_enabled"]?.stringValue
+            let enabled = object["enabled"]?.stringValue ?? object["enable"]?.stringValue ?? object["is_enabled"]?.stringValue ?? object["activated"]?.stringValue ?? object["active"]?.stringValue
             let style: ResourceItemStyle = enabled == "false" ? .disabled : enabled == "true" ? .enabled : .neutral
             return ResourceItem(id: identifier, title: title, subtitle: subtitle, style: style, raw: raw)
         }
@@ -102,10 +102,10 @@ struct ManagementResource: Identifiable, Hashable {
 }
 
 extension ManagementResource {
-    static let bots = Self(id: "bots", title: "消息平台", subtitle: "QQ、Telegram、Discord 等", icon: "antenna.radiowaves.left.and.right", path: "/api/v1/bots", category: "模型与接入", supportsCreate: true)
-    static let providers = Self(id: "providers", title: "模型提供商", subtitle: "LLM、语音、Embedding 与 Rerank", icon: "brain.head.profile", path: "/api/v1/providers", category: "模型与接入", supportsCreate: true)
-    static let configProfiles = Self(id: "profiles", title: "配置文件", subtitle: "多套机器人配置与路由", icon: "square.stack.3d.up", path: "/api/v1/config-profiles", category: "模型与接入", supportsCreate: true)
-    static let configRoutes = Self(id: "routes", title: "配置路由", subtitle: "按会话分配配置", icon: "arrow.triangle.branch", path: "/api/v1/config-routes", category: "模型与接入")
+    static let bots = Self(id: "bots", title: "消息平台", subtitle: "QQ、Telegram、Discord 等", icon: "antenna.radiowaves.left.and.right", path: "/api/v1/bots", category: "核心配置", supportsCreate: true)
+    static let providers = Self(id: "providers", title: "模型提供商", subtitle: "LLM、语音、Embedding 与 Rerank", icon: "brain.head.profile", path: "/api/v1/providers", category: "核心配置", supportsCreate: true)
+    static let configProfiles = Self(id: "profiles", title: "配置", subtitle: "多套机器人配置与路由", icon: "gearshape.2", path: "/api/v1/config-profiles", category: "核心配置", supportsCreate: true)
+    static let configRoutes = Self(id: "routes", title: "配置路由", subtitle: "按会话分配配置", icon: "arrow.triangle.branch", path: "/api/v1/config-routes", category: "核心配置")
 
     static let plugins = Self(id: "plugins", title: "插件", subtitle: "安装、更新与配置插件", icon: "puzzlepiece.extension", path: "/api/v1/plugins", category: "扩展能力")
     static let pluginMarket = Self(id: "market", title: "插件市场", subtitle: "浏览并安装社区插件", icon: "storefront", path: "/api/v1/plugins/market", category: "扩展能力")
@@ -114,13 +114,13 @@ extension ManagementResource {
     static let tools = Self(id: "tools", title: "工具与权限", subtitle: "内置、插件和 MCP 工具", icon: "wrench.and.screwdriver", path: "/api/v1/tools", category: "扩展能力")
     static let commands = Self(id: "commands", title: "指令", subtitle: "别名、冲突与权限", icon: "terminal", path: "/api/v1/commands", category: "扩展能力")
 
-    static let knowledgeBases = Self(id: "knowledge", title: "知识库", subtitle: "文档、分块与检索测试", icon: "books.vertical", path: "/api/v1/knowledge-bases", category: "内容与自动化", supportsCreate: true)
-    static let personas = Self(id: "personas", title: "人格", subtitle: "人格与文件夹管理", icon: "theatermasks", path: "/api/v1/personas", category: "内容与自动化", supportsCreate: true)
-    static let sessions = Self(id: "sessions", title: "会话管理", subtitle: "规则、分组与服务切换", icon: "rectangle.stack.person.crop", path: "/api/v1/sessions", category: "内容与自动化")
-    static let conversations = Self(id: "conversations", title: "对话记录", subtitle: "查询、编辑、导出与删除", icon: "text.bubble", path: "/api/v1/conversations", category: "内容与自动化")
-    static let cronJobs = Self(id: "cron", title: "定时任务", subtitle: "创建、运行和维护任务", icon: "calendar.badge.clock", path: "/api/v1/cron/jobs", category: "内容与自动化", supportsCreate: true)
-    static let subagents = Self(id: "subagents", title: "子 Agent", subtitle: "Agent 编排与工具分配", icon: "person.2.wave.2", path: "/api/v1/subagents/config", category: "内容与自动化")
-    static let t2i = Self(id: "t2i", title: "文本转图片", subtitle: "HTML 模板与活动模板", icon: "photo.badge.plus", path: "/api/v1/t2i/templates", category: "内容与自动化", supportsCreate: true)
+    static let knowledgeBases = Self(id: "knowledge", title: "知识库", subtitle: "文档、分块与检索测试", icon: "books.vertical", path: "/api/v1/knowledge-bases", category: "数据与自动化", supportsCreate: true)
+    static let personas = Self(id: "personas", title: "人格", subtitle: "人格与文件夹管理", icon: "heart", path: "/api/v1/personas", category: "数据与自动化", supportsCreate: true)
+    static let sessions = Self(id: "sessions", title: "会话管理", subtitle: "规则、分组与服务切换", icon: "rectangle.stack.person.crop", path: "/api/v1/sessions", category: "数据与自动化")
+    static let conversations = Self(id: "conversations", title: "对话记录", subtitle: "查询、编辑、导出与删除", icon: "externaldrive", path: "/api/v1/conversations", category: "数据与自动化")
+    static let cronJobs = Self(id: "cron", title: "定时任务", subtitle: "创建、运行和维护任务", icon: "clock", path: "/api/v1/cron/jobs", category: "数据与自动化", supportsCreate: true)
+    static let subagents = Self(id: "subagents", title: "子 Agent", subtitle: "Agent 编排与工具分配", icon: "point.3.connected.trianglepath.dotted", path: "/api/v1/subagents/config", category: "数据与自动化")
+    static let t2i = Self(id: "t2i", title: "文本转图片", subtitle: "HTML 模板与活动模板", icon: "photo.badge.plus", path: "/api/v1/t2i/templates", category: "扩展能力", supportsCreate: true)
 
     static let backups = Self(id: "backups", title: "备份与恢复", subtitle: "导出、导入与下载备份", icon: "externaldrive.badge.timemachine", path: "/api/v1/backups", category: "系统管理", supportsCreate: true)
     static let apiKeys = Self(id: "apiKeys", title: "API Keys", subtitle: "创建、吊销与删除访问密钥", icon: "key.horizontal", path: "/api/v1/api-keys", category: "系统管理", supportsCreate: true)

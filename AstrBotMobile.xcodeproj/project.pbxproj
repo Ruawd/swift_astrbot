@@ -19,13 +19,18 @@
 		E64BFEB03AF1F4F042553959 /* DashboardView.swift in Build */ = {isa = PBXBuildFile; fileRef = 88767E660439A151AD9F95CC /* DashboardView.swift */; };
 		77C0CFB9AF08C771F26CE894 /* MainTabView.swift in Build */ = {isa = PBXBuildFile; fileRef = 9A92D80854BFB6BD3F325A8F /* MainTabView.swift */; };
 		77722DA78A2FC102B76A57D9 /* APIExplorerView.swift in Build */ = {isa = PBXBuildFile; fileRef = EF5AF861085751FE79EA9388 /* APIExplorerView.swift */; };
+		4C612E2D7784A639448C2B0E /* LiveLogView.swift in Build */ = {isa = PBXBuildFile; fileRef = A71C3CD2DAA743E8FD8985B9 /* LiveLogView.swift */; };
 		80BBC6E4443B2B85A27C1C3A /* ManagementHubView.swift in Build */ = {isa = PBXBuildFile; fileRef = 3CD402D9AF8466FA74641AF7 /* ManagementHubView.swift */; };
 		7767B5A2AC6666AE8D623932 /* ResourceDetailView.swift in Build */ = {isa = PBXBuildFile; fileRef = F0D70E88E5E7ED77F0FBA8CA /* ResourceDetailView.swift */; };
 		E24416DCFF6C84DAE45F7CAA /* ResourceListView.swift in Build */ = {isa = PBXBuildFile; fileRef = ACC264DBAC927D401AB6C038 /* ResourceListView.swift */; };
+		B40FE01D7FEF1F43AD26D397 /* MaintenanceViews.swift in Build */ = {isa = PBXBuildFile; fileRef = 2FDF56AA6EDF433CA9F74EF4 /* MaintenanceViews.swift */; };
 		A3C23AF278269A1430AB6333 /* SettingsView.swift in Build */ = {isa = PBXBuildFile; fileRef = E5665FDA4B3D29A492017090 /* SettingsView.swift */; };
+		B0D7EAC87EF7F8043EFAFF88 /* SystemSettingsView.swift in Build */ = {isa = PBXBuildFile; fileRef = 9882AE10463510BF8E8D1893 /* SystemSettingsView.swift */; };
 		B71D1003F4EBCDA10A7A2487 /* ChatModels.swift in Build */ = {isa = PBXBuildFile; fileRef = E328FE5D84FA939AE1A35568 /* ChatModels.swift */; };
+		49F7D8F9FF5883F1516E0D6B /* LogEntry.swift in Build */ = {isa = PBXBuildFile; fileRef = 550D85ED870990496F52F43B /* LogEntry.swift */; };
 		6E1107809A0E719BF81D6417 /* ManagementResource.swift in Build */ = {isa = PBXBuildFile; fileRef = E238E76416C9CE9D97886BE7 /* ManagementResource.swift */; };
 		DA10A1DCD7E1E625AA245F2B /* OpenAPIDocument.swift in Build */ = {isa = PBXBuildFile; fileRef = F72BB614D74B7BF778955E71 /* OpenAPIDocument.swift */; };
+		68C1085D0724E318C74EE4C5 /* SystemSettings.swift in Build */ = {isa = PBXBuildFile; fileRef = B3E85E20505BE19F1E24CA1B /* SystemSettings.swift */; };
 		20635BC606824E2894BE8E72 /* AstrBotAPIClient.swift in Build */ = {isa = PBXBuildFile; fileRef = 1C8CF4C54630146042D8B1D6 /* AstrBotAPIClient.swift */; };
 		997922143F63ACDEADF20603 /* OpenAPIService.swift in Build */ = {isa = PBXBuildFile; fileRef = B1AD7609563D61A24CACC2E0 /* OpenAPIService.swift */; };
 		6AC9E0C53561C81DF8278932 /* Assets.xcassets in Build */ = {isa = PBXBuildFile; fileRef = 7912466D849870D3290230E5 /* Assets.xcassets */; };
@@ -56,13 +61,18 @@
 		88767E660439A151AD9F95CC /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Dashboard/DashboardView.swift"; sourceTree = SOURCE_ROOT; };
 		9A92D80854BFB6BD3F325A8F /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Dashboard/MainTabView.swift"; sourceTree = SOURCE_ROOT; };
 		EF5AF861085751FE79EA9388 /* APIExplorerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Management/APIExplorerView.swift"; sourceTree = SOURCE_ROOT; };
+		A71C3CD2DAA743E8FD8985B9 /* LiveLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Management/LiveLogView.swift"; sourceTree = SOURCE_ROOT; };
 		3CD402D9AF8466FA74641AF7 /* ManagementHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Management/ManagementHubView.swift"; sourceTree = SOURCE_ROOT; };
 		F0D70E88E5E7ED77F0FBA8CA /* ResourceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Management/ResourceDetailView.swift"; sourceTree = SOURCE_ROOT; };
 		ACC264DBAC927D401AB6C038 /* ResourceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Management/ResourceListView.swift"; sourceTree = SOURCE_ROOT; };
+		2FDF56AA6EDF433CA9F74EF4 /* MaintenanceViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Settings/MaintenanceViews.swift"; sourceTree = SOURCE_ROOT; };
 		E5665FDA4B3D29A492017090 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Settings/SettingsView.swift"; sourceTree = SOURCE_ROOT; };
+		9882AE10463510BF8E8D1893 /* SystemSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Features/Settings/SystemSettingsView.swift"; sourceTree = SOURCE_ROOT; };
 		E328FE5D84FA939AE1A35568 /* ChatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Models/ChatModels.swift"; sourceTree = SOURCE_ROOT; };
+		550D85ED870990496F52F43B /* LogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Models/LogEntry.swift"; sourceTree = SOURCE_ROOT; };
 		E238E76416C9CE9D97886BE7 /* ManagementResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Models/ManagementResource.swift"; sourceTree = SOURCE_ROOT; };
 		F72BB614D74B7BF778955E71 /* OpenAPIDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Models/OpenAPIDocument.swift"; sourceTree = SOURCE_ROOT; };
+		B3E85E20505BE19F1E24CA1B /* SystemSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Models/SystemSettings.swift"; sourceTree = SOURCE_ROOT; };
 		1C8CF4C54630146042D8B1D6 /* AstrBotAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Services/AstrBotAPIClient.swift"; sourceTree = SOURCE_ROOT; };
 		B1AD7609563D61A24CACC2E0 /* OpenAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AstrBotMobile/Services/OpenAPIService.swift"; sourceTree = SOURCE_ROOT; };
 		7912466D849870D3290230E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "AstrBotMobile/Resources/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
@@ -79,7 +89,7 @@
 
 /* Begin PBXGroup section */
 		6CFC827E67DCAE34C72B9CED = {isa = PBXGroup; children = (1DF401F405384E02A0BF02D3, 12E9DF2F0820E9F612A165AB, AD5DCE771682A966C8E74829, 021F2B7F3E0C61452C987484); sourceTree = "<group>"; };
-		1DF401F405384E02A0BF02D3 /* AstrBotMobile */ = {isa = PBXGroup; children = (137B968A691C3F9118B93485, 44E0BCE64D584D2082366EC8, 10B8F1CFBE03CEA44053606E, BD10F0E9E0A871F5DDA7C1D9, 57554BA81BA857502BB9E07E, 80AB09CBD70A97F7B37F01D5, 48555CB8A104ECB0827648B4, 2B1BD26FE69EC1B7995163CE, 511C313C37E88E5053EAA842, 8976718FC6AFBE4D1EE34250, 88767E660439A151AD9F95CC, 9A92D80854BFB6BD3F325A8F, EF5AF861085751FE79EA9388, 3CD402D9AF8466FA74641AF7, F0D70E88E5E7ED77F0FBA8CA, ACC264DBAC927D401AB6C038, E5665FDA4B3D29A492017090, E328FE5D84FA939AE1A35568, E238E76416C9CE9D97886BE7, F72BB614D74B7BF778955E71, 1C8CF4C54630146042D8B1D6, B1AD7609563D61A24CACC2E0, 7912466D849870D3290230E5, 3FB14A1334B7AA6EBA5CD2A5); name = AstrBotMobile; sourceTree = "<group>"; };
+		1DF401F405384E02A0BF02D3 /* AstrBotMobile */ = {isa = PBXGroup; children = (137B968A691C3F9118B93485, 44E0BCE64D584D2082366EC8, 10B8F1CFBE03CEA44053606E, BD10F0E9E0A871F5DDA7C1D9, 57554BA81BA857502BB9E07E, 80AB09CBD70A97F7B37F01D5, 48555CB8A104ECB0827648B4, 2B1BD26FE69EC1B7995163CE, 511C313C37E88E5053EAA842, 8976718FC6AFBE4D1EE34250, 88767E660439A151AD9F95CC, 9A92D80854BFB6BD3F325A8F, EF5AF861085751FE79EA9388, A71C3CD2DAA743E8FD8985B9, 3CD402D9AF8466FA74641AF7, F0D70E88E5E7ED77F0FBA8CA, ACC264DBAC927D401AB6C038, 2FDF56AA6EDF433CA9F74EF4, E5665FDA4B3D29A492017090, 9882AE10463510BF8E8D1893, E328FE5D84FA939AE1A35568, 550D85ED870990496F52F43B, E238E76416C9CE9D97886BE7, F72BB614D74B7BF778955E71, B3E85E20505BE19F1E24CA1B, 1C8CF4C54630146042D8B1D6, B1AD7609563D61A24CACC2E0, 7912466D849870D3290230E5, 3FB14A1334B7AA6EBA5CD2A5); name = AstrBotMobile; sourceTree = "<group>"; };
 		12E9DF2F0820E9F612A165AB /* AstrBotMobileTests */ = {isa = PBXGroup; children = (393A45BE50C6624031277889); name = AstrBotMobileTests; sourceTree = "<group>"; };
 		AD5DCE771682A966C8E74829 /* AstrBotMobileUITests */ = {isa = PBXGroup; children = (91E91E466736A37E63C3F533); name = AstrBotMobileUITests; sourceTree = "<group>"; };
 		021F2B7F3E0C61452C987484 /* Products */ = {isa = PBXGroup; children = (5718BA8B2965F0F686C8E55B, 4EF5F27FC2840F4EF5595DEE, 8CB8E5785B8C685CAD3A0B70); name = Products; sourceTree = "<group>"; };
@@ -106,7 +116,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DBF6CD71B0C4EC30100789D3 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (9892741BAD2D0A9634B6080C, D9A5332F1D4232681D6E58DA, 14EF2803C9D685813B7E086A, EF5735829A7441B32917C8D7, 53E57EF4B3CEE770A29676C3, 12B88C1BE843F82C7B927D42, CE10BB149885120F7CC71415, 3094AF9BDDFA471F365552C2, CC14D239B63CFE224B67850D, 186DBA3F80B77584DC893F22, E64BFEB03AF1F4F042553959, 77C0CFB9AF08C771F26CE894, 77722DA78A2FC102B76A57D9, 80BBC6E4443B2B85A27C1C3A, 7767B5A2AC6666AE8D623932, E24416DCFF6C84DAE45F7CAA, A3C23AF278269A1430AB6333, B71D1003F4EBCDA10A7A2487, 6E1107809A0E719BF81D6417, DA10A1DCD7E1E625AA245F2B, 20635BC606824E2894BE8E72, 997922143F63ACDEADF20603); runOnlyForDeploymentPostprocessing = 0; };
+		DBF6CD71B0C4EC30100789D3 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (9892741BAD2D0A9634B6080C, D9A5332F1D4232681D6E58DA, 14EF2803C9D685813B7E086A, EF5735829A7441B32917C8D7, 53E57EF4B3CEE770A29676C3, 12B88C1BE843F82C7B927D42, CE10BB149885120F7CC71415, 3094AF9BDDFA471F365552C2, CC14D239B63CFE224B67850D, 186DBA3F80B77584DC893F22, E64BFEB03AF1F4F042553959, 77C0CFB9AF08C771F26CE894, 77722DA78A2FC102B76A57D9, 4C612E2D7784A639448C2B0E, 80BBC6E4443B2B85A27C1C3A, 7767B5A2AC6666AE8D623932, E24416DCFF6C84DAE45F7CAA, B40FE01D7FEF1F43AD26D397, A3C23AF278269A1430AB6333, B0D7EAC87EF7F8043EFAFF88, B71D1003F4EBCDA10A7A2487, 49F7D8F9FF5883F1516E0D6B, 6E1107809A0E719BF81D6417, DA10A1DCD7E1E625AA245F2B, 68C1085D0724E318C74EE4C5, 20635BC606824E2894BE8E72, 997922143F63ACDEADF20603); runOnlyForDeploymentPostprocessing = 0; };
 		BE4BC27101E7F29EB444ED01 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (76B853E40EAD5F7F53E57EC0); runOnlyForDeploymentPostprocessing = 0; };
 		1EA01EEA0D670E248A7A1A60 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (6625E472223FFFEC8F98C55E); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXSourcesBuildPhase section */

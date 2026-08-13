@@ -205,6 +205,49 @@ struct AstrBotAPIClient: Sendable {
             continuation.onTermination = { @Sendable _ in task.cancel() }
         }
     }
+
+    func streamLogs(lastEventID: String? = nil) -> AsyncThrowingStream<LogEntry, Error> {
+        AsyncThrowingStream { continuation in
+            let task = Task { @Sendable in
+                do {
+                    var request = URLRequest(url: baseURL.appendingAPIPath("/api/v1/logs/live"))
+                    request.timeoutInterval = 60 * 60
+                    request.setValue("text/event-stream", forHTTPHeaderField: "Accept")
+                    request.setValue("no-cache", forHTTPHeaderField: "Cache-Control")
+                    if let lastEventID { request.setValue(lastEventID, forHTTPHeaderField: "Last-Event-ID") }
+                    if let token {
+                        request.setValue(
+                            authenticationMode == .jwt ? "Bearer \(token)" : "ApiKey \(token)",
+                            forHTTPHeaderField: "Authorization"
+                        )
+                    }
+                    let (bytes, response) = try await session.bytes(for: request)
+                    guard let http = response as? HTTPURLResponse else { throw APIError.invalidResponse }
+                    guard (200 ... 299).contains(http.statusCode) else {
+                        throw APIError.http(status: http.statusCode, message: nil)
+                    }
+                    var eventID: String?
+                    for try await line in bytes.lines {
+                        if line.hasPrefix("id:") {
+                            eventID = line.dropFirst(3).trimmingCharacters(in: .whitespaces)
+                            continue
+                        }
+                        guard line.hasPrefix("data:") else { continue }
+                        let payload = line.dropFirst(5).trimmingCharacters(in: .whitespaces)
+                        guard let data = payload.data(using: .utf8) else { continue }
+                        let entry = try JSONDecoder().decode(LogEntry.self, from: data)
+                        continuation.yield(entry.with(eventID: eventID))
+                    }
+                    continuation.finish()
+                } catch is CancellationError {
+                    continuation.finish()
+                } catch {
+                    continuation.finish(throwing: error)
+                }
+            }
+            continuation.onTermination = { @Sendable _ in task.cancel() }
+        }
+    }
 }
 
 enum APIError: LocalizedError, Equatable {

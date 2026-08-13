@@ -3,9 +3,19 @@ import SwiftUI
 struct ManagementHubView: View {
     @State private var searchText = ""
 
+    private let webUIOrder = [
+        "bots", "providers", "plugins", "profiles", "knowledge", "personas",
+        "conversations", "sessions", "cron", "subagents", "tools", "commands",
+        "mcp", "skills", "t2i",
+    ]
+
     private var filtered: [ManagementResource] {
-        guard !searchText.isEmpty else { return ManagementResource.all }
-        return ManagementResource.all.filter {
+        let visible = ManagementResource.all.filter { webUIOrder.contains($0.id) }
+        let ordered = visible.sorted {
+            (webUIOrder.firstIndex(of: $0.id) ?? Int.max) < (webUIOrder.firstIndex(of: $1.id) ?? Int.max)
+        }
+        guard !searchText.isEmpty else { return ordered }
+        return ordered.filter {
             $0.title.localizedStandardContains(searchText) ||
                 $0.subtitle.localizedStandardContains(searchText) ||
                 $0.category.localizedStandardContains(searchText)
@@ -16,7 +26,8 @@ struct ManagementHubView: View {
         ZStack {
             LiquidBackground()
             List {
-                ForEach(Array(Dictionary(grouping: filtered, by: \.category).keys).sorted(), id: \.self) { category in
+                ForEach(["核心配置", "数据与自动化", "扩展能力"], id: \.self) { category in
+                    if filtered.contains(where: { $0.category == category }) {
                     Section(category) {
                         ForEach(filtered.filter { $0.category == category }) { resource in
                             NavigationLink(value: resource) {
@@ -37,11 +48,12 @@ struct ManagementHubView: View {
                             }
                         }
                     }
+                    }
                 }
             }
             .scrollContentBackground(.hidden)
         }
-        .navigationTitle("管理")
+        .navigationTitle("AstrBot 管理")
         .searchable(text: $searchText, prompt: "搜索管理功能")
         .navigationDestination(for: ManagementResource.self) { resource in
             ResourceListView(resource: resource)
