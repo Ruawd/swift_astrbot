@@ -293,7 +293,13 @@ private struct CreateAPIKeyView: View {
                         ForEach(options, id: \.self) { scope in
                             Toggle(scope, isOn: Binding(
                                 get: { scopes.contains(scope) },
-                                set: { $0 ? scopes.insert(scope) : scopes.remove(scope) }
+                                set: { isEnabled in
+                                    if isEnabled {
+                                        scopes.insert(scope)
+                                    } else {
+                                        scopes.remove(scope)
+                                    }
+                                }
                             ))
                         }
                     }
