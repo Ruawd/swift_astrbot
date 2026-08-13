@@ -74,7 +74,13 @@ jobs:
             -derivedDataPath build/SimulatorDerivedData \
             -destination 'generic/platform=iOS Simulator' \
             CODE_SIGNING_ALLOWED=NO \
-            build 2>&1 | tee simulator-build.log
+            build 2>&1 | tee simulator-build.log || {
+              status=${PIPESTATUS[0]}
+              echo "::group::Swift compiler diagnostics"
+              grep -n -C 4 -E '(^|[^[:alpha:]])(error:|fatal error:)' simulator-build.log || true
+              echo "::endgroup::"
+              exit "$status"
+            }
 
       - name: Upload simulator build log
         if: always()
