@@ -207,7 +207,7 @@ struct APIKeySettingsView: View {
                             Spacer()
                             Text(key.raw["revoked_at"] == nil ? "有效" : "已吊销")
                                 .font(.caption.weight(.semibold))
-                                .foregroundStyle(key.raw["revoked_at"] == nil ? .green : .secondary)
+                                .foregroundStyle(key.raw["revoked_at"] == nil ? Color.green : Color.secondary)
                         }
                         Text(key.raw["key_prefix"]?.stringValue ?? key.id).font(.caption.monospaced()).foregroundStyle(.secondary)
                         HStack {

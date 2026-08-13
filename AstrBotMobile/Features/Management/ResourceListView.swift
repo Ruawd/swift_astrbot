@@ -207,10 +207,12 @@ private struct ResourceVisualRow: View {
     private var statusBadge: some View {
         if resource == .bots, let status = platformStatus?["status"]?.stringValue {
             Text(status == "running" ? "运行中" : status)
-                .font(.caption2.weight(.bold)).foregroundStyle(status == "running" ? .green : .orange)
+                .font(.caption2.weight(.bold))
+                .foregroundStyle(status == "running" ? Color.green : Color.orange)
         } else if item.style != .neutral {
             Text(item.style == .enabled ? "已启用" : "已停用")
-                .font(.caption2.weight(.bold)).foregroundStyle(item.style == .enabled ? .green : .secondary)
+                .font(.caption2.weight(.bold))
+                .foregroundStyle(item.style == .enabled ? Color.green : Color.secondary)
         }
     }
 
@@ -228,7 +230,8 @@ private struct ResourceVisualRow: View {
                 .font(.caption).foregroundStyle(.secondary).lineLimit(1)
         case .mcp:
             Text(item.raw["connected"]?.stringValue == "true" ? "已连接" : "未连接")
-                .font(.caption).foregroundStyle(item.raw["connected"]?.stringValue == "true" ? .green : .secondary)
+                .font(.caption)
+                .foregroundStyle(item.raw["connected"]?.stringValue == "true" ? Color.green : Color.secondary)
         case .personas:
             Text(item.raw["system_prompt"]?.stringValue ?? "未设置提示词").font(.caption).foregroundStyle(.secondary).lineLimit(1)
         default:

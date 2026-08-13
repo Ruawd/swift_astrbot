@@ -5,7 +5,10 @@ struct LogEntry: Identifiable, Codable, Hashable, Sendable {
     let time: Double
     let data: String
     let category: String?
-    var eventID: String?
+    // SSE event ids are transport metadata and are not part of AstrBot's
+    // JSON log payload.  A default keeps Codable synthesis valid while the
+    // stream client can attach the id after decoding.
+    var eventID: String? = nil
 
     var id: String {
         return eventID ?? "\(time)-\(level)-\(data.hashValue)"

@@ -65,6 +65,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          set -o pipefail
           xcodebuild \
             -project AstrBotMobile.xcodeproj \
             -scheme AstrBotMobile \
@@ -73,7 +74,16 @@ jobs:
             -derivedDataPath build/SimulatorDerivedData \
             -destination 'generic/platform=iOS Simulator' \
             CODE_SIGNING_ALLOWED=NO \
-            build
+            build 2>&1 | tee simulator-build.log
+
+      - name: Upload simulator build log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: simulator-build-log-${{ github.run_attempt }}
+          path: simulator-build.log
+          if-no-files-found: ignore
+          retention-days: 7
 
       - name: Build app without signing
         shell: bash

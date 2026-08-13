@@ -17,7 +17,9 @@ struct SystemSettingsView: View {
 
     private var groups: [String] {
         Array(Set(definitions.map(\.group))).sorted { first, second in
-            definitions.firstIndex(where: { $0.group == first }) ?? 0 < definitions.firstIndex(where: { $0.group == second }) ?? 0
+            let firstIndex = definitions.firstIndex(where: { $0.group == first }) ?? .max
+            let secondIndex = definitions.firstIndex(where: { $0.group == second }) ?? .max
+            return firstIndex < secondIndex
         }
     }
 
